@@ -1,6 +1,7 @@
 import { SaveOutlined } from "@mui/icons-material";
 import { Button, Grid, TextField, Typography } from "@mui/material";
 import React from "react";
+import { ImageGallery } from "../components";
 
 const NoteView = () => {
   return (
@@ -31,7 +32,16 @@ const NoteView = () => {
           label="Titulo"
           sx={{ border: "none", mb: 1 }}
         />
+        <TextField
+          type="text"
+          variant="filled"
+          fullWidth
+          placeholder="Que sucedio el dia de hoy?"
+          multiline
+          minRows={4}
+        />
       </Grid>
+      <ImageGallery />
     </Grid>
   );
 };
