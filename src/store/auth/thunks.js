@@ -1,6 +1,8 @@
 import { Password } from "@mui/icons-material";
 import {
   loginWithEmailPassword,
+  logoutFirebase,
+  registerUserWithEmailPassword,
   signInWithGoogle,
 } from "../../firebase/providers";
 import { checkingCredentials, login, logout } from "./authSlice";
