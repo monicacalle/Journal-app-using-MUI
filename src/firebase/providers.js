@@ -6,6 +6,7 @@ import {
   updateProfile,
 } from "firebase/auth";
 import { FirebaseAuth } from "./config.js";
+
 const googleProvider = new GoogleAuthProvider();
 
 export const signInWithGoogle = async () => {
