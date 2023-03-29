@@ -3,6 +3,7 @@ import {
   Divider,
   Drawer,
   Grid,
+  ImageList,
   ImageListItem,
   List,
   ListItem,
@@ -35,15 +36,16 @@ export const SideBar = ({ drawerWidth }) => {
       >
         <Toolbar>
           {photoURL && (
-            <ImageListItem key={photoURL}>
-              <img
-                src={`${photoURL}`}
-                // srcSet={`${photoURL}?w=164&h=164&fit=crop&auto=format&dpr=2 1x`}
-                alt="google photo"
-                loading="lazy"
-                sx={{ width: "50%" }}
-              />
-            </ImageListItem>
+            <Box
+              component="img"
+              sx={{
+                height: 50,
+                width: 45,
+                borderRadius: "50%",
+              }}
+              alt="google photo."
+              src={photoURL}
+            />
           )}
           <Typography variant="h5" noWrap component="div">
             Welcome:
