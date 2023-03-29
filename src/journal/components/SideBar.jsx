@@ -3,6 +3,7 @@ import {
   Divider,
   Drawer,
   Grid,
+  ImageListItem,
   List,
   ListItem,
   ListItemButton,
@@ -16,7 +17,7 @@ import { useSelector } from "react-redux";
 import { SideBarItem } from "./SideBarItem";
 
 export const SideBar = ({ drawerWidth }) => {
-  const { displayName } = useSelector((state) => state.auth);
+  const { displayName, photoURL } = useSelector((state) => state.auth);
   const { notes } = useSelector((state) => state.journal);
 
   return (
@@ -33,6 +34,17 @@ export const SideBar = ({ drawerWidth }) => {
         }}
       >
         <Toolbar>
+          {photoURL && (
+            <ImageListItem key={photoURL}>
+              <img
+                src={`${photoURL}`}
+                // srcSet={`${photoURL}?w=164&h=164&fit=crop&auto=format&dpr=2 1x`}
+                alt="google photo"
+                loading="lazy"
+                sx={{ width: "50%" }}
+              />
+            </ImageListItem>
+          )}
           <Typography variant="h5" noWrap component="div">
             Welcome:
             <br />
